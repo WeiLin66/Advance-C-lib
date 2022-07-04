@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+
 void int64_t_to_string(int64_t val, char* buffer){
     int i=0;
     int64_t remain;
