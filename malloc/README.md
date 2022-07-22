@@ -1,26 +1,17 @@
-# Malloc專案紀錄
+# 關於此專案
 
 ## Intro
 
-```
-TBD
-```
+該專案主要實現兩個版本的動態記憶體分配功能，資料夾對應如下:
 
-
-## REVISION 3
-
-Automated test suite for ECE/CS 650 homework 2, spring 2019.
-
-By Brian Rogers (brian.m.rogers@duke.edu) and Tyler Bletsch (Tyler.Bletsch@duke.edu)
-
-Revision history
- - Rev 3, 2018-01-26: Fixed minor test program issues: printf format and lack of unistd include.
- - Rev 2, 2018-01-24: Updated for spring 2018, this readme added.
- - Rev 1, 2017-02-08: Spring 2017 final revision.
+- Task 1 &rarr; 實現malloc(), free()
+- Task 2 &rarr; 實現多線程安全版本
 
 ## References
 
 [tutorial](https://danluu.com/malloc-tutorial/)
 
-[corresponding github](https://github.com/danluu/malloc-tutorial)
+[corresponding github1](https://github.com/danluu/malloc-tutorial)
+
+[corresponding github2](https://github.com/rijish45/Thread-Safe-Malloc)
 
