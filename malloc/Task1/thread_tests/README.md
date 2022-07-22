@@ -47,11 +47,9 @@ To compile this program, you may work with the provided Makefile.
 There is are 2 variable that you will need to edit:
 
 1) WDIR should point to the directory with your my_malloc.* code
-   and compiled library (libmymalloc.so).
+and compiled library (libmymalloc.so).
 
 2) MALLOC_VERSION should either be set to "LOCK_VERSION" or 
-   "NOLOCK_VERSION" such that the test invokes the desired version
-   of your thread-safe malloc functions.
-
-
+"NOLOCK_VERSION" such that the test invokes the desired version
+of your thread-safe malloc functions.
 ```
