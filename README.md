@@ -1,10 +1,8 @@
-# Advance C Programming Projects
+# Advance C Projects
 
-- 改寫或重寫過後的庫或API
-  - JSON
-  - 32 bits machine float to string converter
-  - 32 bits machine long to string converter
-- C的專案練習
-  - 自己實現一個malloc函式
-  - 實現一個輕量級的MQTT Server
+- JSON lite lib
+- 32 bits machine float to string converter API
+- 32 bits machine long to string converter API
+- Write a simple malloc() and free()
+- Lite MQTT Server
 
