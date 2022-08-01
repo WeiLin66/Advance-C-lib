@@ -39,6 +39,8 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 #include <math.h>
 #include <stdlib.h>
 #include <limits.h>
