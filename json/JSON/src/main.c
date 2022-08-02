@@ -33,6 +33,7 @@ int main(){
     cJSON_AddTrueToObject(cjson_test, "Qualified");
 
     printf("%s\n\n", cJSON_Print(cjson_test)); // print JSON
+    cJSON_Delete(cjson_test); // deallocate cjson_test
     printf("constitution of JSON data format end ===>\n\n");
 
     /**
@@ -109,7 +110,8 @@ int main(){
         printf("\nstudent: false\n");
     }
 
-        printf("Parsing JSON data end ===>\n\n");
+    cJSON_Delete(cjson_test_p);
+    printf("Parsing JSON data end ===>\n\n");
 
     return 0;
 }
