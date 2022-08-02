@@ -21,6 +21,8 @@ bool check_json_parse(cJSON **p_root_parser, int *p_json_ary_size, uint8_t *p_pa
 }
 
 int main(){
+    printf("constitution of JSON data format begin ===>\n\n");
+
     cJSON* cjson_test = cJSON_CreateObject(); // create dummy head
     cJSON* cjson_delivery = cJSON_CreateObject();
     cJSON* cjson_material = cJSON_CreateArray();
@@ -29,7 +31,6 @@ int main(){
     /**
      *  creating JSON data format
      */
-
     cJSON_AddStringToObject(cjson_test, "Object", "Table"); // add string type key-value pair
     cJSON_AddNumberToObject(cjson_test,"Width",800); // add number type key-value pair
     cJSON_AddNumberToObject(cjson_test,"Length",600);
@@ -47,12 +48,13 @@ int main(){
 
     cJSON_AddTrueToObject(cjson_test, "Qualified");
 
-    printf("%s\n", cJSON_Print(cjson_test)); // print JSON
-
+    printf("%s\n\n", cJSON_Print(cjson_test)); // print JSON
+    printf("constitution of JSON data format end ===>\n\n");
 
     /**
      * Parsing JSON content
      */
+    printf("Parsing JSON data begin ===>\n\n");
 
     cJSON* cjson_test_p = NULL;
     cJSON* cjson_test_name = NULL;
@@ -77,6 +79,9 @@ int main(){
         return -1;
     }
 
+    printf("%s\n\n", cJSON_Print(cjson_test_p));
+    printf("Total Items: %d\n\n", cJSON_GetArraySize(cjson_test_p));
+
     /* parsing single JSON data */
     cjson_test_name = cJSON_GetObjectItem(cjson_test_p, "name");
     cjson_test_age = cJSON_GetObjectItem(cjson_test_p, "age");
@@ -96,7 +101,7 @@ int main(){
     cjson_test_address_city_code = cJSON_GetObjectItem(cjson_test_address, "city-code");
 
     printf("country: %s\n", cjson_test_address_country->valuestring);
-    printf("city-code: %d\n", cjson_test_address_city_code->valueint);
+    printf("city-code: %d\n\n", cjson_test_address_city_code->valueint);
 
     /* parsing array */
     cJSON* cjson_test_skill = NULL;
@@ -115,12 +120,12 @@ int main(){
     cJSON* cjson_test_student = cJSON_GetObjectItem(cjson_test_p, "student");
 
     if(cjson_test_student->valueint){
-        printf("student: true\n");
+        printf("\nstudent: true\n");
     }else{
-        printf("student: false\n");
+        printf("\nstudent: false\n");
     }
 
-    printf("\r\n");
+        printf("Parsing JSON data end ===>\n\n");
 
     return 0;
 }
