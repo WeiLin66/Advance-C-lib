@@ -21,15 +21,27 @@ bool check_json_parse(cJSON **p_root_parser, int *p_json_ary_size, uint8_t *p_pa
 }
 
 int main(){
-    cJSON* root_ptr = NULL;
-    int numbers=0;
-    char test_str[] = "[{\"id\":\"FC0_43001\",\"value\":10},{\"id\":\"FC0_43002\",\"value\":10},{\"id\":\"FC0_43003\",\"value\":10}]";
+    cJSON* cjson_test = cJSON_CreateObject(); // create dummy head
+    cJSON* cjson_delivery = cJSON_CreateObject();
+    cJSON* cjson_material = cJSON_CreateArray();
 
-    if(check_json_parse(&root_ptr, &numbers, (uint8_t*)test_str)){
-        printf("numbers: %d\n", numbers);
-	}else{
-        printf("failed!\n");
-    }
+    cJSON_AddStringToObject(cjson_test, "Object", "Table"); // add string type key-value pair
+    cJSON_AddNumberToObject(cjson_test,"Width",800); // add number type key-value pair
+    cJSON_AddNumberToObject(cjson_test,"Length",600);
+
+    /* add JSON object as a key-value pair */
+    cJSON_AddStringToObject(cjson_delivery, "County", "New Taipei City");
+    cJSON_AddNumberToObject(cjson_delivery,"Postal code",234);
+    cJSON_AddItemToObject(cjson_test, "Address", cjson_delivery);
+
+    /* add array object as a key-value pair */
+    cJSON_AddItemToArray(cjson_material, cJSON_CreateString("Wood"));
+    cJSON_AddItemToArray(cjson_material, cJSON_CreateString("Metal"));
+    cJSON_AddItemToArray(cjson_material, cJSON_CreateString("Plastic"));
+    cJSON_AddItemToObject(cjson_test, "Material", cjson_material);
+
+    printf("%s\n", cJSON_Print(cjson_test)); // print JSON
+
 
     return 0;
 }
