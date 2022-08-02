@@ -40,6 +40,8 @@ int main(){
     cJSON_AddItemToArray(cjson_material, cJSON_CreateString("Plastic"));
     cJSON_AddItemToObject(cjson_test, "Material", cjson_material);
 
+    cJSON_AddTrueToObject(cjson_test, "Qualified");
+
     printf("%s\n", cJSON_Print(cjson_test)); // print JSON
 
 
