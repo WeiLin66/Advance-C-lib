@@ -11,7 +11,6 @@ int main(){
     cJSON* cjson_delivery = cJSON_CreateObject();
     cJSON* cjson_material = cJSON_CreateArray();
 
-
     /**
      *  creating JSON data format
      */
